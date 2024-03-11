@@ -199,13 +199,13 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
             }
         });
 
-        this.connected.done(function ()
-        {
-            if (onNamespaceInitializedCallback)
-            {
-                return onNamespaceInitializedCallback(null, nsp);
-            }
-        });
+        // this.connected.done(function ()
+        // {
+        //     if (onNamespaceInitializedCallback)
+        //     {
+        //         return onNamespaceInitializedCallback(null, nsp);
+        //     }
+        // });
     }
 
     /**
@@ -280,11 +280,11 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
                     return amqpChannel.bindQueue(this.amqpIncomingQueue, this.amqpExchangeName, channel, {});
                 })
             )
-            .done(() => fn(), err =>
-            {
-                this.emit('error', err);
-                fn(err);
-            });
+            // .done(() => fn(), err =>
+            // {
+            //     this.emit('error', err);
+            //     fn(err);
+            // });
     };
 
     /**
@@ -317,7 +317,7 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
                     return amqpChannel.publish(this.publishExchange, this.globalRoomName, msg);
                 }
             })
-            .done();
+            // .done();
     };
 
     /**
@@ -344,11 +344,11 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
                     return amqpChannel.unbindQueue(this.amqpIncomingQueue, this.amqpExchangeName, channel);
                 }
             })
-            .done(() => fn(), err =>
-            {
-                this.emit('error', err);
-                fn(err);
-            });
+            // .done(() => fn(), err =>
+            // {
+            //     this.emit('error', err);
+            //     fn(err);
+            // });
     };
 
     /**
@@ -383,12 +383,12 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
             .then(() =>
             {
                 delete this.sids[id];
-            })
-            .done(() => fn(), err =>
-            {
-                this.emit('error', err);
-                fn(err);
             });
+            // .done(() => fn(), err =>
+            // {
+            //     this.emit('error', err);
+            //     fn(err);
+            // });
     };
 
     function getChannelName()
