@@ -1,6 +1,6 @@
 {
   "name": "socket.io-amqp",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A Sockets.IO Adapter for AMQP & RabbitMQ",
   "main": "lib/main.js",
   "directories": {
@@ -14,12 +14,13 @@
     "test": "mocha test/*.js && eslint ."
   },
   "dependencies": {
-    "socket.io-adapter": "1.1.x",
+    "amqp-connection-manager": "^4.1.14",
     "amqplib": "0.10.3",
-    "debug": "3.1.x",
-    "underscore": "1.8.x",
-    "msgpack-js": "0.3.x",
     "async": "2.5.x",
+    "debug": "3.1.x",
+    "msgpack-js": "0.3.x",
+    "socket.io-adapter": "1.1.x",
+    "underscore": "1.8.x",
     "when": "3.7.x"
   },
   "repository": {

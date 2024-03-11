@@ -24,7 +24,8 @@
  */
 
 const Adapter = require('socket.io-adapter'),
-    amqplib = require('amqplib'),
+    // amqplib = require('amqplib'),
+    amqplib = require('amqp-connection-manager'),
     debug = require('debug')('socket.io-amqp'),
     msgpack = require('msgpack-js'),
     underscore = require('underscore'),
@@ -198,7 +199,6 @@ function adapter(uri, opts, onNamespaceInitializedCallback)
                 return onNamespaceInitializedCallback(err, nsp);
             }
         });
-
         // this.connected.done(function ()
         // {
         //     if (onNamespaceInitializedCallback)
